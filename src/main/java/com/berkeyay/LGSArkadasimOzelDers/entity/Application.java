@@ -27,13 +27,16 @@ public class Application {
     private Long applicationId;
 
     private String chosenClass;
+    private String chosenTopic;
     private String date;
     private String time;
     private String parentName;
     private String studentName;
     private String email;
     private String phoneNumber;
-    private String preferredSchool;
+    private String firstPreferredSchool;
+    private String secondPreferredSchool;
+    private String thirdPreferredSchool;
 
     @ElementCollection
     private List<String> questions;

@@ -43,13 +43,16 @@ public class ApplicationServiceImpl implements ApplicationService{
 
         Application application = Application.builder()
                         .chosenClass(applicationRequest.getChosenClass())
+                        .chosenTopic(applicationRequest.getChosenTopic())
                         .date(applicationRequest.getDate())
                         .time(applicationRequest.getTime())
                         .parentName(applicationRequest.getParentName())
                         .studentName(applicationRequest.getStudentName())
                         .email(applicationRequest.getEmail())
                         .phoneNumber(applicationRequest.getPhoneNumber())
-                        .preferredSchool(applicationRequest.getPreferredSchool())
+                        .firstPreferredSchool(applicationRequest.getFirstPreferredSchool())
+                        .secondPreferredSchool(applicationRequest.getSecondPreferredSchool())
+                        .thirdPreferredSchool(applicationRequest.getThirdPreferredSchool())
                         .questions(questionPaths)
                         .build();
 

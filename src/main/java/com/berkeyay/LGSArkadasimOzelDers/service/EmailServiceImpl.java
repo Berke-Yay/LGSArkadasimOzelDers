@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class EmailServiceImpl implements EmailService{
 
-    private String rootMail = "yayberke2007@gmail.com";
+    private String rootMail = "lgsarkadasimprojesi@gmail.com";
     @Autowired
     private JavaMailSender mailSender;
 
@@ -42,11 +42,15 @@ public class EmailServiceImpl implements EmailService{
     public String buildEmailBody(Application application){
         return "Özel Ders Başvuru detaylarını aşağıda bulabilirsiniz: \n" +
                 "Seçilen ders: " + application.getChosenClass() + "\n" +
+                "Seçilen konu: " + application.getChosenTopic() + "\n" +
                 "Dersin tarihi ve saati: " + application.getDate() + " " + application.getTime() + "\n" +
                 "Öğrencinin adı: " + application.getStudentName() + "\n" +
                 "Velinin adı: " + application.getParentName() + "\n" +
-                "İletişim numarası: " + application.getPhoneNumber() + "\n" +
-                "Dersi verecek öğrencinin okulu: " + application.getPreferredSchool();
+                "İletişim numarası: " + application.getPhoneNumber() + "\n\n" +
+                "Dersi verecek öğrencinin okulu: " + "\n" +
+                "1. tercih: " + application.getFirstPreferredSchool() + "\n" +
+                "2. tercih: " + application.getSecondPreferredSchool() + "\n" +
+                "3. tercih: " + application.getThirdPreferredSchool() + "\n";
     }
 
 }
