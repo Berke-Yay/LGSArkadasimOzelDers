@@ -6,7 +6,6 @@ import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMailMessage;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -42,7 +41,7 @@ public class EmailServiceImpl implements EmailService{
     public String buildEmailBody(Application application){
         return "Özel Ders Başvuru detaylarını aşağıda bulabilirsiniz: \n" +
                 "Seçilen ders: " + application.getChosenClass() + "\n" +
-                "Seçilen konu: " + application.getChosenTopic() + "\n" +
+                "Seçilen konular: " + application.getFirstChosenTopic() + ", " + application.getSecondChosenTopic() + "\n" +
                 "Dersin tarihi ve saati: " + application.getDate() + " " + application.getTime() + "\n" +
                 "Öğrencinin adı: " + application.getStudentName() + "\n" +
                 "Velinin adı: " + application.getParentName() + "\n" +
@@ -50,7 +49,8 @@ public class EmailServiceImpl implements EmailService{
                 "Dersi verecek öğrencinin okulu: " + "\n" +
                 "1. tercih: " + application.getFirstPreferredSchool() + "\n" +
                 "2. tercih: " + application.getSecondPreferredSchool() + "\n" +
-                "3. tercih: " + application.getThirdPreferredSchool() + "\n";
+                "3. tercih: " + application.getThirdPreferredSchool() + "\n" +
+                "Ek bilgi: " + application.getAdditionalInformation() + "\n";
     }
 
 }

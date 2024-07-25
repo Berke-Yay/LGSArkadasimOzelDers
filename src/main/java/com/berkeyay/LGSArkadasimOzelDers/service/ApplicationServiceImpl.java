@@ -43,7 +43,6 @@ public class ApplicationServiceImpl implements ApplicationService{
 
         Application application = Application.builder()
                         .chosenClass(applicationRequest.getChosenClass())
-                        .chosenTopic(applicationRequest.getChosenTopic())
                         .date(applicationRequest.getDate())
                         .time(applicationRequest.getTime())
                         .parentName(applicationRequest.getParentName())
@@ -53,6 +52,9 @@ public class ApplicationServiceImpl implements ApplicationService{
                         .firstPreferredSchool(applicationRequest.getFirstPreferredSchool())
                         .secondPreferredSchool(applicationRequest.getSecondPreferredSchool())
                         .thirdPreferredSchool(applicationRequest.getThirdPreferredSchool())
+                        .additionalInformation(applicationRequest.getAdditionalInformation())
+                        .firstChosenTopic(applicationRequest.getFirstChosenTopic())
+                        .secondChosenTopic(applicationRequest.getSecondChosenTopic())
                         .questions(questionPaths)
                         .build();
 

@@ -27,7 +27,6 @@ public class Application {
     private Long applicationId;
 
     private String chosenClass;
-    private String chosenTopic;
     private String date;
     private String time;
     private String parentName;
@@ -37,6 +36,9 @@ public class Application {
     private String firstPreferredSchool;
     private String secondPreferredSchool;
     private String thirdPreferredSchool;
+    private String additionalInformation;
+    private String firstChosenTopic;
+    private String secondChosenTopic;
 
     @ElementCollection
     private List<String> questions;

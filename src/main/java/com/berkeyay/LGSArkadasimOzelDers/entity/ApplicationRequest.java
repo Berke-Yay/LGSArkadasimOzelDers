@@ -14,7 +14,6 @@ import java.util.List;
 @Builder
 public class ApplicationRequest {
     private String chosenClass;
-    private String chosenTopic;
     private String date;
     private String time;
     private String parentName;
@@ -24,5 +23,9 @@ public class ApplicationRequest {
     private String firstPreferredSchool;
     private String secondPreferredSchool;
     private String thirdPreferredSchool;
+    private String additionalInformation;
+    private String firstChosenTopic;
+    private String secondChosenTopic;
     private List<MultipartFile> questions;
+
 }
