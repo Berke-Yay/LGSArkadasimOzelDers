@@ -17,7 +17,6 @@ import java.util.List;
 public class EmailServiceImpl implements EmailService{
 
     private String rootMail = "lgsarkadasimprojesi@gmail.com";
-    private String rootMailTest = "yayberke2007@gmail.com";
     @Autowired
     private JavaMailSender mailSender;
 
@@ -26,7 +25,7 @@ public class EmailServiceImpl implements EmailService{
         MimeMessageHelper helper = new MimeMessageHelper(message, true);
 
         helper.setTo(to);
-        helper.setBcc(rootMailTest);
+        helper.setBcc(rootMail);
 
         //helper.setText(buildEmailBody(application));
         String emailContent = "";
